@@ -15,9 +15,11 @@ function computerPlay(){
 function playRound(computerSelection, playerSelection){
     // check if the player selection is valid
     if(!playerSelection){
-        return 'Invalid input.'
+        return 'Invalid choice.'
     }
     //compare computer and player selection
+
+
     // if the player select rock .
     else if(playerSelection === 'rock'){
         return playerSelectRock(computerSelection)
@@ -31,12 +33,14 @@ function playRound(computerSelection, playerSelection){
      else if(playerSelection === 'scissor'){
         return playerSelectScisor(computerSelection);
     }
+    // return the error message
     else return 'Please You have choose either "Rock,Paper or Scissor"'
-    // return the message to announce the result
 
 }
+
 function playerSelectRock(computerSelection){
      // if the player select rock and computer choose paper computer wins.
+
      if(computerSelection === 'Paper'){
          return 'You have lost! Paper beats Rock'
      }
@@ -97,6 +101,7 @@ function game(){
         }
         else if(result.match('tie')){}
         else return 'game canceled'
+        
     }
     let finalResult = (computerScore > playerScore)?`Sorry you have lost with ${playerScore} Score`:`Congratulations! You have won with ${playerScore} Score`
     return finalResult;
